@@ -1,27 +1,26 @@
 <html>
 	<head>
-		<script src="javascripts/task.js"></script>
-
+        <script src="javascripts/task.js"></script>
         <script type="text/javascript">
             function initialize() {
                 var vessel = new Vessel('Яндекс', [0,0], 1000);
                 var planetA = new Planet('A', [0,0], 0);
                 var planetB = new Planet('B', [100, 100], 5000);
 
-				// Проверка текущего состояния
-				console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 0,0. Занято: 0 из 1000т.
-				console.log(planetA.report()); // Планета "A". Местоположене: 0,0. Грузов нет.
-				console.log(planetB.report()); // Планета "B". Местоположене: 100,100. Доступно груза: 5000т.
+                // Проверка текущего состояния
+                console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 0,0. Занято: 0 из 1000т.
+                console.log(planetA.report()); // Планета "A". Местоположене: 0,0. Грузов нет.
+                console.log(planetB.report()); // Планета "B". Местоположене: 100,100. Доступно груза: 5000т.
 
-				vessel.flyTo(planetB);
-				planetB.loadCargoTo(vessel, 1000);
-				console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 100,100. Занято: 1000 из 1000т.
+                vessel.flyTo(planetB);
+                planetB.loadCargoTo(vessel, 1000);
+                console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 100,100. Занято: 1000 из 1000т.
 
-				vessel.flyTo(planetA);
-				planetA.unloadCargoFrom(vessel, 500);
-				console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 0,0. Занято: 500 из 1000т.
-				console.log(planetA.report()); // Планета "A". Местоположение: 0,0. Доступно груза: 500т.
-				console.log(planetB.report()); // Планета "B". Местоположение: 100,100. Доступно груза: 4000т.
+                vessel.flyTo(planetA);
+                planetA.unloadCargoFrom(vessel, 500);
+                console.log(vessel.report()); // Корабль "Яндекс". Местоположение: 0,0. Занято: 500 из 1000т.
+                console.log(planetA.report()); // Планета "A". Местоположение: 0,0. Доступно груза: 500т.
+                console.log(planetB.report()); // Планета "B". Местоположение: 100,100. Доступно груза: 4000т.
             }
         </script>
 	</head>
